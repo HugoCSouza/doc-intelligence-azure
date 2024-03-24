@@ -23,17 +23,23 @@ Configure este recurso com o tipo de preço F0. Após isso, vamos criar manualme
 Selecione o desempenho como *Standard* e a redundância como *LRS*. Após isso, você pode criar a conta.
 ![alt text](image-5.png)
 
+## Configuração da conta de armazenamento
+
 Aguarde alguns segundos para que sua conta de armazenamento seja criada e clique em "Ir para o recurso". Dentro da aba da conta de armazenamento, no menu lateral esquerdo, role a tela até aparecer a aba *Settings* (ou configurações) e clique em *Configuration* (ou configuração).
 ![alt text](image-6.png)
 
 Dentro dessa aba, na opção "Permitir acesso anônimo de Blob", selecione habilitar e salve a configuração.
 ![alt text](image-7.png)
 
+## Criação dos contâineres
+
 Então, role o menu lateral até a parte superior, na aba "Armazenamento de dados" e clique em "Containers". Dentro dessa opção, selecione criar um container clicando no símbolo "+".
 ![alt text](image-8.png)
 
 Coloque o nome "coffee-reviews" e mude o nivel de acesso para contêiner conforme a imagem.
 ![alt text](image-9.png)
+
+## Importação e configuração dos dados dentro do container
 
 Baixe o [arquivo zip](https://aka.ms/mslearn-coffee-reviews) que contém a documentação de teste e extraia-o em seu dispositivo. Em seguida, clique em "Upload" (ou Carregar) e faça o upload de todos os arquivos para dentro do container que você acabou de criar.
 ![alt text](image-11.png)
@@ -99,4 +105,45 @@ Expanda as opções avançadas e selecione:
 
 - Chaves de Codificação de Base 64
 
-Após isso, clique em enviar.
+Após isso, clique em enviar. 
+
+## Realizando pesquisa nos dados
+
+Com seus dados importados, você já pode realizar buscas dentro dos arquivos que foram importados inicialmente. Clique em "Gerenciador de Pesquisas" para iniciar o mecanismo de busca.
+![alt text](image-18.png)
+
+Na página que abrir, clique na opção "Exibir" e mude a visualização para JSON para realizar suas pesquisas.
+![alt text](image-19.png)
+
+Agora, o formato do arquivo de pesquisa deve ser JSON. Para inicar as pesquisas, insira este código no campo de pesquisa
+
+```json
+{
+    "search": "*",
+    "count": true
+}
+```
+
+Será enviado como resposta um arquivo JSON com todas as informações de configurações do ambiente onde a IA está desenvolvida. Para confirmar que as importações foram feitas corretamente, procure pelo campo `@odata.count`, que contém quantos arquivos estão sendo importados.
+
+![alt text](image-20.png)
+
+Inserindo este código:
+
+```json
+{
+ "search": "locations:'Chicago'",
+ "count": true
+}
+```
+
+Será feita uma busca para todos os arquivos cuja a localização seja chicago. Se tudo foi configuração corretamente, serão encontrado 3 arquivos. Já realizando esta busca:
+
+```json
+{
+ "search": "sentiment:'negative'",
+ "count": true
+}
+```
+
+será procurado todos os documentos que tenham uma análise negativa. Foi encontrado apenas um documento.
