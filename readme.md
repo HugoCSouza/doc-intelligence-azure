@@ -148,4 +148,8 @@ Será feita uma busca para todos os arquivos cuja a localização seja chicago. 
 
 será procurado todos os documentos que tenham uma análise negativa. Foi encontrado apenas um documento.
 
+## Não se esqueça de excluir os recursos após o aprendizado para que não gere posíveis custos futuramente!
+
 ### Este repositório foi feito com objetivo de demonstrar a configuração básica de uma ferramenta de inteligencia de documentos dentro do Azure, baseado no laboratório disponivel [neste link](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/11-ai-search.html) além de servir como base de avaliação dentro do bootcamp " Microsoft Azure AI Fundamentals" ministrado pela DIO. Qualquer sugestão, pode solicitar um pull request ou entrar em contato comigo via [linkedin](https://www.linkedin.com/in/hugo-cs-souza/)
+
+
